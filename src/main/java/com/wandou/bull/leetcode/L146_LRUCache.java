@@ -11,12 +11,22 @@ import java.util.Map;
  */
 public class L146_LRUCache {
 
-    private Map<Integer, Node> cache = new HashMap<>();
-    private int size;
-    private int capacity;
-    private Node head, tail;
+    public static void main(String[] args) {
+        LRUCache lruCache = new LRUCache(3);
 
-    public L146_LRUCache(int capacity) {
+    }
+
+}
+
+class LRUCache {
+
+    private final Map<Integer, Node> cache = new HashMap<>();
+    private int size;
+    private final int capacity;
+    private final Node head;
+    private final Node tail;
+
+    public LRUCache(int capacity) {
         this.size = 0;
         this.capacity = capacity;
         // 伪头部和伪尾部节点
@@ -83,7 +93,9 @@ public class L146_LRUCache {
         return res;
     }
 
-
+    /**
+     * 链表的节点
+     */
     class Node {
         int key;
         int value;
